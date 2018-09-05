@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /> -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/banner"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/firstFunction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option1"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/secondFunction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option2"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/thirdFunction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option3"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/banner2"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/firstGrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option4"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/secondGrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option5"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/thirdGrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option6"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/theResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result"/>
+
+        <ImageView
+            android:id="@+id/anglePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grade45"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
