@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark"
+    tools:context=".SetColorActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paint"
+        android:textColor="@color/pink"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"/>
+    
+    <ImageView
+        android:id="@+id/whiteSquare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:src="@drawable/white_square"/>
+
+    <TextView
+        android:id="@+id/redProgress"
+        android:text="@string/R"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        android:textSize="20dp"
+        android:textColor="@color/red"/>
+
+    <SeekBar
+        android:id="@+id/redSeekbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:thumbTint="@color/red"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/red"
+        />
+
+    <TextView
+        android:id="@+id/greenProgress"
+        android:text="@string/G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        android:textSize="20dp"
+        android:textColor="@color/strong_green"/>
+
+    <SeekBar
+        android:id="@+id/greenSeekbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:thumbTint="@color/strong_green"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/strong_green"
+        />
+
+    <TextView
+        android:id="@+id/blueProgress"
+        android:text="@string/B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        android:textSize="20dp"
+        android:textColor="@color/blue"/>
+
+    <SeekBar
+        android:id="@+id/blueSeekbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:thumbTint="@color/blue"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/blue"
+        />
+</LinearLayout>
