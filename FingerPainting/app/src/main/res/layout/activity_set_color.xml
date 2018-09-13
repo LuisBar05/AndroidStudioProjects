@@ -80,4 +80,13 @@
         android:progressBackgroundTint="@color/white"
         android:progressTint="@color/blue"
         />
+
+    <Button
+        android:id="@+id/goBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/backButton"
+        android:onClick="onButtonClicked"/>
 </LinearLayout>

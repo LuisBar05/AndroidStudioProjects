@@ -1,8 +1,12 @@
 package com.example.luisbb.fingerpainting;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,6 +22,7 @@ public class SetColorActivity extends AppCompatActivity {
     private static int red=0, green=0, blue=0;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,16 @@ public class SetColorActivity extends AppCompatActivity {
         redSeekbarListener();
         greenSeekbarListener();
         blueSeekbarListener();
+    }
+
+    public void onButtonClicked(View view){
+        Intent intentResult = new Intent();
+        intentResult.putExtra(MainActivity.SET_RED_DATA, red);
+        intentResult.putExtra(MainActivity.SET_GREEN_DATA, green);
+        intentResult.putExtra(MainActivity.SET_BLUE_DATA, blue);
+
+        setResult (Activity.RESULT_OK, intentResult);
+        finish ();
     }
 
     public void setSchemeColor(){

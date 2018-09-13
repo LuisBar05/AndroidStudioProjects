@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private final int CAMERA_REQUEST_CODE=1000;
     private final int REQUEST_IMAGE_CAPTURE=1001;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

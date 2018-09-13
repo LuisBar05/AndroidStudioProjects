@@ -2,6 +2,7 @@
     <string name="app_name">FingerPainting</string>
     <string name="mnu_item_one">Painting</string>
     <string name="paint">Choose a scheme color!</string>
+    <string name="backButton">Go back!</string>
     <string name="R">RED (0/255)</string>
     <string name="G">GREEN (0/255)</string>
     <string name="B">BLUE (0/255)</string>
