@@ -2,13 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
     <item
         android:id="@+id/mnu_item_one"
         android:title="@string/mnu_item_one"
         app:showAsAction="ifRoom"
         android:icon="@drawable/highlighter"/>
 
+    <item
+        android:id="@+id/mnu_item_two"
+        android:title="notPainting"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/not_paint" />
 
 </menu>
