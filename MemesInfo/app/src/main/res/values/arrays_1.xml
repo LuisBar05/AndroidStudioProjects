@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <array name="images">
+    <item>@drawable/cereal_guy</item>
+    <item>@drawable/f_yeah</item>
+    <item>@drawable/forever_alone</item>
+    <item>@drawable/freddie_mercury</item>
+    <item>@drawable/lol_guy</item>
+    <item>@drawable/neil_degrasse_tyson</item>
+    <item>@drawable/oh_crap</item>
+    <item>@drawable/okay</item>
+    <item>@drawable/rage_guy</item>
+    <item>@drawable/troll_face</item>
+    <item>@drawable/y_u_no_guy</item>
+    <item>@drawable/yao_ming</item>
+  </array>
+
+  <string-array name="names">
+    <item>Cereal Guy</item>
+    <item>F!@# Yeah</item>
+    <item>Forever Alone</item>
+    <item>Freddie Mercury</item>
+    <item>LOL Guy</item>
+    <item>Neil deGrasse Tyson</item>
+    <item>Oh Crap/OMG Face</item>
+    <item>Okay Guy</item>
+    <item>Rage Guy</item>
+    <item>Trollface/Problem?</item>
+    <item>"Y U No" Guy</item>
+    <item>Yao Ming Face</item>
+  </string-array>
+
+</resources>
