@@ -17,6 +17,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MemesFragment extends Fragment {
+    private OnMemeTouchedListener myListener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach (context);
+
+        if (context instanceof OnMemeTouchedListener) {
+            myListener = (OnMemeTouchedListener) context;
+        } else {
+            throw new ClassCastException ("Must implement OnMemeTouchedListener first!");
+        }
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,21 +49,34 @@ public class MemesFragment extends Fragment {
         if(myRecyclerView==null)
             return;
 
+        String [] namesArray=getResources().getStringArray(R.array.names);
+        TypedArray memesImagesArray=getResources().obtainTypedArray((R.array.images));
+        String [] descriptionsArray= getResources().getStringArray(R.array.descriptions);
+        String [] urlsArray= getResources().getStringArray(R.array.urls);
+
         myRecyclerView.setLayoutManager (new GridLayoutManager(getContext(), 2));
-        myRecyclerView.setAdapter (new  ListadoAdapter (getContext (), getResources().obtainTypedArray(R.array.names), getResources().obtainTypedArray(R.array.images)));
+        myRecyclerView.setAdapter (new  ListadoAdapter (getContext (), namesArray, memesImagesArray, descriptionsArray,
+                urlsArray, myListener));
     }
 
 }
 
 class ListadoAdapter extends RecyclerView.Adapter<ListadoViewHolder> {
     private Context context;
-    private TypedArray myData;
-    private TypedArray myImages;
+    private String [] namesArray;
+    private String [] urlsArray;
+    private String [] descriptionsArray;
+    private TypedArray memesImagesArray;
+    private OnMemeTouchedListener myListener;
 
-    ListadoAdapter (Context context, TypedArray myData, TypedArray myImages) {
+    ListadoAdapter (Context context, String [] namesArray, TypedArray memesImagesArray, String [] descriptionsArray,
+                    String [] urlsArray, OnMemeTouchedListener myListener) {
         this.context = context;
-        this.myData = myData;
-        this.myImages=myImages;
+        this.namesArray=namesArray;
+        this.memesImagesArray=memesImagesArray;
+        this.descriptionsArray=descriptionsArray;
+        this.urlsArray=urlsArray;
+        this.myListener=myListener;
     }
 
     @NonNull
@@ -62,12 +88,18 @@ class ListadoAdapter extends RecyclerView.Adapter<ListadoViewHolder> {
 
     @Override
     public void onBindViewHolder (@NonNull ListadoViewHolder listadoViewHolder, int i) {
-        listadoViewHolder.bind (myData.getString(i), myImages.getDrawable(i));
+        listadoViewHolder.bind (namesArray[i], memesImagesArray.getDrawable(i));
+
+        listadoViewHolder.itemView.setOnClickListener (view -> {
+            if (myListener != null)
+                myListener.onMemeTouched (namesArray[i], memesImagesArray.getDrawable(i), descriptionsArray[i], urlsArray[i]);
+        });
+
     }
 
     @Override
-    public int getItemCount () {
-        return myData.length ();
+    public int getItemCount() {
+        return 0;
     }
 
 }
