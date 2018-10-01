@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="elements">
+    <item>PLANETS</item>
+    <item>PEOPLE</item>
+    <item>STARSHIPS</item>
+    <item>FILMS</item>
+    <item>VEHICLES</item>
+    <item>SPECIES</item>
+  </string-array>
+</resources>

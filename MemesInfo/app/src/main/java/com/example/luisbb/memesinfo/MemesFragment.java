@@ -49,8 +49,8 @@ public class MemesFragment extends Fragment {
         if(myRecyclerView==null)
             return;
 
-        String [] namesArray=getResources().getStringArray(R.array.names);
-        TypedArray memesImagesArray=getResources().obtainTypedArray((R.array.images));
+        String [] namesArray= getActivity().getResources().getStringArray(R.array.names);
+        TypedArray memesImagesArray=getActivity().getResources().obtainTypedArray((R.array.images));
         String [] descriptionsArray= getResources().getStringArray(R.array.descriptions);
         String [] urlsArray= getResources().getStringArray(R.array.urls);
 
@@ -92,14 +92,14 @@ class ListadoAdapter extends RecyclerView.Adapter<ListadoViewHolder> {
 
         listadoViewHolder.itemView.setOnClickListener (view -> {
             if (myListener != null)
-                myListener.onMemeTouched (namesArray[i], memesImagesArray.getDrawable(i), descriptionsArray[i], urlsArray[i]);
+                myListener.onMemeTouched (namesArray[i], memesImagesArray.getIndex(i), descriptionsArray[i], urlsArray[i]);
         });
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return namesArray.length;
     }
 
 }

@@ -15,6 +15,7 @@ public class InfoMemeActivity extends AppCompatActivity {
         myBundle.putString("MemeName", getIntent().getStringExtra("MemeNameString"));
         myBundle.putString("MemeDescription", getIntent().getStringExtra("MemeDescriptionString"));
         myBundle.putString("MemeUrl", getIntent().getStringExtra("MemeUrlString"));
+        myBundle.putInt("MemeImage", getIntent().getIntExtra("MemeImageIndex", 0));
 
         ShowInfoFragment myFragment=new ShowInfoFragment();
         myFragment.setArguments(myBundle);

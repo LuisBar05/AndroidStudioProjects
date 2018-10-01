@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -29,11 +30,13 @@ public class ShowInfoFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         TextView nameText=getView().findViewById(R.id.memeName);
+        ImageView imageView=getView().findViewById(R.id.imageMeme);
         TextView descriptionText=getView().findViewById(R.id.descriptionMeme);
         TextView urlText=getView().findViewById(R.id.urlMeme);
 
-        nameText.setText(getArguments().getString("MemeName"));
-        descriptionText.setText(getArguments().getString("MemeDescription"));
+        nameText.setText(name);
+        imageView.setImageDrawable(getResources().obtainTypedArray(R.array.images).getDrawable(getArguments().getInt("MemeImage")));
+        descriptionText.setText(description);
         urlText.setText(getArguments().getString("MemeUrl"));
     }
 }

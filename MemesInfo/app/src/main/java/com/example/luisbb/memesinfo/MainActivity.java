@@ -1,6 +1,8 @@
 package com.example.luisbb.memesinfo;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -22,9 +24,10 @@ public class MainActivity extends AppCompatActivity implements  OnMemeTouchedLis
     }
 
     @Override
-    public void onMemeTouched (String name, Drawable image, String description, String URL) {
+    public void onMemeTouched (String name, int imageIndex, String description, String URL) {
         Intent myIntent=new Intent(this, InfoMemeActivity.class);
         myIntent.putExtra("MemeNameString", name);
+        myIntent.putExtra("MemeImageIndex", imageIndex);
         myIntent.putExtra("MemeDescriptionString", description);
         myIntent.putExtra("MemeUrlString", URL);
         startActivity(myIntent);
