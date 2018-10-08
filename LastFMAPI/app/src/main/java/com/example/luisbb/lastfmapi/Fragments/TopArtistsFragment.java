@@ -13,7 +13,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.luisbb.lastfmapi.Models.LastFMArtist;
+import com.example.luisbb.lastfmapi.Models.LastFMTopArtistsHandler;
+import com.example.luisbb.lastfmapi.Models.LastFMTopArtistsResponse;
 import com.example.luisbb.lastfmapi.R;
+import com.example.luisbb.lastfmapi.Utils.LastFMConstants;
+import com.example.luisbb.lastfmapi.Utils.LastFMService;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class TopArtistsFragment extends Fragment {
@@ -43,18 +57,48 @@ public class TopArtistsFragment extends Fragment {
         if(myRecyclerView==null)
             return;
 
+        ArrayList<LastFMArtist> myArtists=new ArrayList<>();
+
+        Retrofit myRetroFit=new Retrofit.Builder()
+                .baseUrl(LastFMConstants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        LastFMService lastFMService= myRetroFit.create(LastFMService.class);
+        Call<LastFMTopArtistsResponse> foo=lastFMService.getTopArtists(LastFMConstants.TOP_ITEMS_LIMIT, LastFMConstants.API_KEY, LastFMConstants.REQUEST_FORMAT);
+
+        foo.enqueue(new Callback<LastFMTopArtistsResponse>() {
+            @Override
+            public void onResponse(Call<LastFMTopArtistsResponse> call, Response<LastFMTopArtistsResponse> response) {
+                LastFMTopArtistsHandler lastFMTopArtistsHandler=response.body().getTopArtists();
+                myArtists.addAll(lastFMTopArtistsHandler.getArtists());
+
+
+                if(response.body().getTopArtists().getArtists()!=null){
+                    LastFMArtist myArtist=new LastFMArtist();
+                    myArtist.setName("Kanye West");
+                    myArtists.add(myArtist);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<LastFMTopArtistsResponse> call, Throwable t) {
+
+            }
+        });
         String[] elementsArray=getResources().getStringArray(R.array.elements);
 
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        myRecyclerView.setAdapter(new ElementsListAdapter(getContext(), elementsArray));
+        myRecyclerView.setAdapter(new ElementsListAdapter(getContext(), myArtists));
     }
 }
 
 class ElementsListAdapter extends RecyclerView.Adapter<ElementsListViewHolder>{
     private Context myContext;
-    private String [] elementsArray;
+    private ArrayList<LastFMArtist> elementsArray;
 
-    public ElementsListAdapter(Context myContext, String [] elementsArray){
+    public ElementsListAdapter(Context myContext, ArrayList<LastFMArtist> elementsArray){
         this.myContext=myContext;
         this.elementsArray=elementsArray;
     }
@@ -68,12 +112,12 @@ class ElementsListAdapter extends RecyclerView.Adapter<ElementsListViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ElementsListViewHolder elementsListViewHolder, int i) {
-        elementsListViewHolder.bind(elementsArray[i]);
+        elementsListViewHolder.bind(elementsArray.get(i).getName());
     }
 
     @Override
     public int getItemCount() {
-        return elementsArray.length;
+        return elementsArray.size();
     }
 }
 
