@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
 public class LastFMArtist {
-    @SerializedName("name")
     private String name;
     private String playcount;
     private String listeners;

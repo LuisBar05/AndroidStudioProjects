@@ -1,5 +1,6 @@
 package com.example.luisbb.lastfmapi;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -48,6 +49,19 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public int getCount() {
             return NUM_ITEMS;
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch(position){
+                case 0:
+                    return "TopArtists";
+                case 1:
+                    return "TopTracks";
+                default:
+                    return "Error";
+            }
         }
     }
 }

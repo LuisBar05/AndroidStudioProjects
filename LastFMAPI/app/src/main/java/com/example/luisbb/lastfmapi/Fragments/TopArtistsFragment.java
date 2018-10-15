@@ -67,27 +67,23 @@ public class TopArtistsFragment extends Fragment {
         LastFMService lastFMService= myRetroFit.create(LastFMService.class);
         Call<LastFMTopArtistsResponse> foo=lastFMService.getTopArtists(LastFMConstants.TOP_ITEMS_LIMIT, LastFMConstants.API_KEY, LastFMConstants.REQUEST_FORMAT);
 
-        foo.enqueue(new Callback<LastFMTopArtistsResponse>() {
+        Callback<LastFMTopArtistsResponse> cbHandler=new Callback<LastFMTopArtistsResponse>() {
             @Override
             public void onResponse(Call<LastFMTopArtistsResponse> call, Response<LastFMTopArtistsResponse> response) {
+                if(!response.isSuccessful())
+                    return;
+
                 LastFMTopArtistsHandler lastFMTopArtistsHandler=response.body().getTopArtists();
                 myArtists.addAll(lastFMTopArtistsHandler.getArtists());
-
-
-                if(response.body().getTopArtists().getArtists()!=null){
-                    LastFMArtist myArtist=new LastFMArtist();
-                    myArtist.setName("Kanye West");
-                    myArtists.add(myArtist);
-                }
-
             }
 
             @Override
             public void onFailure(Call<LastFMTopArtistsResponse> call, Throwable t) {
 
             }
-        });
-        String[] elementsArray=getResources().getStringArray(R.array.elements);
+        };
+
+        foo.enqueue(cbHandler);
 
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         myRecyclerView.setAdapter(new ElementsListAdapter(getContext(), myArtists));

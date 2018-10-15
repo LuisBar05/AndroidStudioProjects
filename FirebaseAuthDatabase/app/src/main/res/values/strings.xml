@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FirebaseAuthDatabase</string>
+    <string name="email_password_title">Email and Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="signed_in">Signed In</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="load_show_songs">Load/Show songs</string>
+    <string name="loading_warning">Loading...</string>
+</resources>
