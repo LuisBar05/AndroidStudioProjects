@@ -1,17 +1,12 @@
 package com.example.luisbb.firebaseauthdatabase;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
-import com.example.luisbb.firebaseauthdatabase.Models.ListOfSongs;
+import com.example.luisbb.firebaseauthdatabase.Fragments.PlaylistFragment;
 import com.example.luisbb.firebaseauthdatabase.Models.SongDetails;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,20 +17,36 @@ import java.util.ArrayList;
 
 public class SongsDataBaseActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
+    private ArrayList<SongDetails> myListSongs;
+    public static final String KEY="PLAYLIST";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs_data_base);
         FirebaseDatabase database=FirebaseDatabase.getInstance();
-        mDatabaseRef=database.getReference();
+        mDatabaseRef=database.getReference("songs");
+    }
 
-        mDatabaseRef.child("songs").addValueEventListener(new ValueEventListener() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot child: dataSnapshot.getChildren()){
-                    SongDetails mSongData=child.getValue(SongDetails.class);
+                myListSongs= new ArrayList<>();
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    SongDetails mSongData = child.getValue(SongDetails.class);
+                    mSongData.setSongId(child.getKey());
+                    myListSongs.add(mSongData);
                 }
+
+                getSupportFragmentManager()
+                        .beginTransaction ()
+                        .replace (R.id.rootContainer, PlaylistFragment.newInstance(myListSongs))
+                        .setTransition (FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .commit ();
             }
 
             @Override

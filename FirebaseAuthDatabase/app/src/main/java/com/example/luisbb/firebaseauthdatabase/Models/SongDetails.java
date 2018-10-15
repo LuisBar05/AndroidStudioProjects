@@ -1,16 +1,25 @@
 package com.example.luisbb.firebaseauthdatabase.Models;
 
 public class SongDetails {
+    private String songId;
     private String album;
     private String author;
     private String company;
     private String composer;
     private String cover;
     private String title;
-    private String year;
+    private int year;
 
     public SongDetails(){
         // Default constructor required for calls to DataSnapshot.getValue(Message.class)
+    }
+
+    public String getSongId(){
+        return songId;
+    }
+
+    public void setSongId(String songId){
+        this.songId=songId;
     }
 
     public String getAlbum() {
@@ -61,11 +70,11 @@ public class SongDetails {
         this.title = title;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 }

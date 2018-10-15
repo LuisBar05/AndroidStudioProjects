@@ -9,18 +9,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.luisbb.firebaseauthdatabase.Models.SongDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
@@ -65,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             FirebaseUser myUser=mAuth.getCurrentUser();
+                            Toast.makeText(MainActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                             updateUI(myUser);
                         } else{
                             Toast.makeText(MainActivity.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
@@ -179,25 +173,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 signOut();
                 break;
             case R.id.load_show_playlist_button:
-                FirebaseDatabase database=FirebaseDatabase.getInstance();
-                DatabaseReference mDatabaseRef=database.getReference();
-
-                mDatabaseRef.child("songs").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for(DataSnapshot child: dataSnapshot.getChildren()){
-                            SongDetails mSongData=child.getValue(SongDetails.class);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-//                Intent myIntent= new Intent(this, SongsDataBaseActivity.class);
-//                startActivity(myIntent);
+                Intent myIntent= new Intent(MainActivity.this, SongsDataBaseActivity.class);
+                startActivity(myIntent);
                 break;
             default:
                 return;

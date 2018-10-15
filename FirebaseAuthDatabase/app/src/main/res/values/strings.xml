@@ -10,4 +10,8 @@
     <string name="create_account">Create Account</string>
     <string name="load_show_songs">Load/Show songs</string>
     <string name="loading_warning">Loading...</string>
+    <string name="songs">Songs Database</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
