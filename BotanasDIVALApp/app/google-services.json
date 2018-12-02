@@ -49,6 +49,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354229427208:android:6ea118ffa6f59430",
+        "android_client_info": {
+          "package_name": "com.hitesh_sahu.retailshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354229427208-e1lr10h5mh58hn0nfjj96ichg89bjlbl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hitesh_sahu.retailshop",
+            "certificate_hash": "67e93f8c64c13c4e1166c31098ded2aca0b8e5ec"
+          }
+        },
+        {
+          "client_id": "354229427208-prqmr6cbcui3vhsbbcphot63fsm63ico.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1h1aNbRSeyeL3_-Dq283ctogjmLJAKcY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354229427208-prqmr6cbcui3vhsbbcphot63fsm63ico.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

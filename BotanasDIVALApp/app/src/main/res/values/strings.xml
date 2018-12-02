@@ -22,15 +22,17 @@
     <string name="crash_toast_text">Oops! Ha ocurrido un error</string>
     <string name="offer_banner">"Pregunte por los descuentos especiales por venta de mayoreo. Puede consultar información de contacto en el apartado 'Acerca de'"</string>
     <string name="checkout">Revisar Pedido</string>
-    <string name="similar_product">You may also like</string>
+    <string name="similar_product">Te podría interesar también:</string>
     <string name="slogan">Assignment</string>
     <string name="email_developer_">Email Developer:</string>
-    <string name="personal_website_">Personal Website :</string>
-    <string name="site_hitesh">www.hiteshsahu.com</string>
+    <string name="personal_website_">Business Website :</string>
+    <string name="site">https://www.facebook.com/DIVALBotanas/</string>
     <string name="contact_number">Contact Number</string>
-    <string name="mob_num">8888813275</string>
+    <string name="mob_num">1 229 303 3774</string>
+    <string name="label_confirmation">Realizar Pedido</string>
     <string name="lab_locations">Locations</string>
     <string name="pune">Pune</string>
-    <string name="address_value">C 1002, Lorelle Socity Wakad Pune</string>
+    <string name="address_value">20 DE NOVIEMBRE # 1383 BIS COL. ZARAGOZA
+Veracruz</string>
 
 </resources>
