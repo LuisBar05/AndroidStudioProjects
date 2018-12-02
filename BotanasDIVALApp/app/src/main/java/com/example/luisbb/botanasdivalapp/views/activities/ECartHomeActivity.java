@@ -21,13 +21,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.models.DataCenter;
-import com.hitesh_sahu.retailapp.models.Money;
-import com.hitesh_sahu.retailapp.models.Products;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.utils.Utils.AnimationType;
-import com.hitesh_sahu.retailapp.views.fragment.HomeFragment;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.models.DataCenter;
+import com.example.luisbb.botanasdivalapp.models.Money;
+import com.example.luisbb.botanasdivalapp.models.Products;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.utils.Utils.AnimationType;
+import com.example.luisbb.botanasdivalapp.views.fragment.HomeFragment;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.math.BigDecimal;

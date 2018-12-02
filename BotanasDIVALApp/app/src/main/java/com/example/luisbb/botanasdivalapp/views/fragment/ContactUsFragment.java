@@ -21,10 +21,10 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.utils.Utils.AnimationType;
-import com.hitesh_sahu.retailapp.views.activities.ECartHomeActivity;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.utils.Utils.AnimationType;
+import com.example.luisbb.botanasdivalapp.views.activities.ECartHomeActivity;
 
 // TODO: Auto-generated Javadoc
 

@@ -19,7 +19,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hitesh_sahu.retailapp.R;
+import com.example.luisbb.botanasdivalapp.R;
 
 
 public class SplashActivity extends FragmentActivity {
@@ -39,7 +39,7 @@ public class SplashActivity extends FragmentActivity {
         appSlogan = findViewById(R.id.pro_txt);
 
         // Font path
-        String fontPath = "font/CircleD_Font_by_CrazyForMusic.ttf";
+        String fontPath = "font/circled_font_by_crazyformusic.ttf";
         // Loading Font Face
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
 

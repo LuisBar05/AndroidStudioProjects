@@ -9,7 +9,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.hitesh_sahu.retailapp.models.Categories;
+import com.example.luisbb.botanasdivalapp.models.Categories;
 
 import java.util.ArrayList;
 

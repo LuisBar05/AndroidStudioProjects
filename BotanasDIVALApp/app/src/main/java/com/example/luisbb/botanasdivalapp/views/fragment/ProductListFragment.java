@@ -19,12 +19,12 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.utils.Utils.AnimationType;
-import com.hitesh_sahu.retailapp.views.activities.ECartHomeActivity;
-import com.hitesh_sahu.retailapp.views.adapter.ProductListAdapter;
-import com.hitesh_sahu.retailapp.views.adapter.ProductListAdapter.OnItemClickListener;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.utils.Utils.AnimationType;
+import com.example.luisbb.botanasdivalapp.views.activities.ECartHomeActivity;
+import com.example.luisbb.botanasdivalapp.views.adapter.ProductListAdapter;
+import com.example.luisbb.botanasdivalapp.views.adapter.ProductListAdapter.OnItemClickListener;
 
 import java.util.Objects;
 

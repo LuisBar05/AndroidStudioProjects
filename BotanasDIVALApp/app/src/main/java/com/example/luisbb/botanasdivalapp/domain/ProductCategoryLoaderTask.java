@@ -14,14 +14,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.utils.AppConstants;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.utils.Utils.AnimationType;
-import com.hitesh_sahu.retailapp.views.activities.ECartHomeActivity;
-import com.hitesh_sahu.retailapp.views.adapter.CategoryListAdapter;
-import com.hitesh_sahu.retailapp.views.adapter.CategoryListAdapter.OnItemClickListener;
-import com.hitesh_sahu.retailapp.views.fragment.ProductOverviewFragment;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.utils.AppConstants;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.utils.Utils.AnimationType;
+import com.example.luisbb.botanasdivalapp.views.activities.ECartHomeActivity;
+import com.example.luisbb.botanasdivalapp.views.adapter.CategoryListAdapter;
+import com.example.luisbb.botanasdivalapp.views.adapter.CategoryListAdapter.OnItemClickListener;
+import com.example.luisbb.botanasdivalapp.views.fragment.ProductOverviewFragment;
 
 /**
  * The Class ImageLoaderTask.

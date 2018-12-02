@@ -22,15 +22,16 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.models.DataCenter;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.utils.Utils.AnimationType;
-import com.hitesh_sahu.retailapp.views.activities.ECartHomeActivity;
-import com.hitesh_sahu.retailapp.views.adapter.ShoppingListAdapter;
-import com.hitesh_sahu.retailapp.views.adapter.ShoppingListAdapter.OnItemClickListener;
-import com.hitesh_sahu.retailapp.views.customview.OnStartDragListener;
-import com.hitesh_sahu.retailapp.views.customview.SimpleItemTouchHelperCallback;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.models.DataCenter;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.utils.Utils.AnimationType;
+import com.example.luisbb.botanasdivalapp.views.activities.ECartHomeActivity;
+import com.example.luisbb.botanasdivalapp.views.adapter.ShoppingListAdapter;
+import com.example.luisbb.botanasdivalapp.views.adapter.ShoppingListAdapter.OnItemClickListener;
+import com.example.luisbb.botanasdivalapp.views.customview.ItemTouchHelperAdapter;
+import com.example.luisbb.botanasdivalapp.views.customview.OnStartDragListener;
+import com.example.luisbb.botanasdivalapp.views.customview.SimpleItemTouchHelperCallback;
 
 public class MyCartFragment extends Fragment implements OnStartDragListener {
 
@@ -118,7 +119,7 @@ public class MyCartFragment extends Fragment implements OnStartDragListener {
                     });
 
             ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(
-                    shoppinListAdapter);
+                    (ItemTouchHelperAdapter) shoppinListAdapter);
             mItemTouchHelper = new ItemTouchHelper(callback);
             mItemTouchHelper.attachToRecyclerView(recyclerView);
 

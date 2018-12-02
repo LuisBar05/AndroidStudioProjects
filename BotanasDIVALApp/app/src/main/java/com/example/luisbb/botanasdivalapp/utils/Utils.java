@@ -26,12 +26,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.graphics.drawable.DrawableCompat;
 
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.views.fragment.ContactUsFragment;
-import com.hitesh_sahu.retailapp.views.fragment.HomeFragment;
-import com.hitesh_sahu.retailapp.views.fragment.MyCartFragment;
-import com.hitesh_sahu.retailapp.views.fragment.ProductOverviewFragment;
-import com.hitesh_sahu.retailapp.views.fragment.SettingsFragment;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.views.fragment.ContactUsFragment;
+import com.example.luisbb.botanasdivalapp.views.fragment.HomeFragment;
+import com.example.luisbb.botanasdivalapp.views.fragment.MyCartFragment;
+import com.example.luisbb.botanasdivalapp.views.fragment.ProductOverviewFragment;
+import com.example.luisbb.botanasdivalapp.views.fragment.SettingsFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class Utils {
 
     public static final String ATTRIBUTE_TTF_KEY = "ttf_name";
 
-    public static final String ATTRIBUTE_SCHEMA = "http://schemas.android.com/apk/lib/com.hitesh_sahu.retailapp.util";
+    public static final String ATTRIBUTE_SCHEMA = "http://schemas.android.com/apk/lib/com.example.luisbb.botanasdivalapp.util";
 
     public final static String SHOPPING_LIST_TAG = "SHoppingListFragment";
     public static final String PRODUCT_OVERVIEW_FRAGMENT_TAG = "ProductOverView";

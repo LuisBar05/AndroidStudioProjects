@@ -18,15 +18,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.models.DataCenter;
-import com.hitesh_sahu.retailapp.models.Money;
-import com.hitesh_sahu.retailapp.models.Products;
-import com.hitesh_sahu.retailapp.utils.ColorGenerator;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.views.activities.ECartHomeActivity;
-import com.hitesh_sahu.retailapp.views.customview.TextDrawable;
-import com.hitesh_sahu.retailapp.views.customview.TextDrawable.IBuilder;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.models.DataCenter;
+import com.example.luisbb.botanasdivalapp.models.Money;
+import com.example.luisbb.botanasdivalapp.models.Products;
+import com.example.luisbb.botanasdivalapp.utils.ColorGenerator;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.views.activities.ECartHomeActivity;
+import com.example.luisbb.botanasdivalapp.views.customview.TextDrawable;
+import com.example.luisbb.botanasdivalapp.views.customview.TextDrawable.IBuilder;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -279,7 +279,7 @@ public class ProductListAdapter extends
     }
 
     @Override
-    public void onItemMove(int fromPosition, int toPosition) {
+    public boolean onItemMove(int fromPosition, int toPosition) {
         if (fromPosition < toPosition) {
             for (int i = fromPosition; i < toPosition; i++) {
                 Collections.swap(productList, i, i + 1);
@@ -290,6 +290,8 @@ public class ProductListAdapter extends
             }
         }
         notifyItemMoved(fromPosition, toPosition);
+
+        return true;
     }
 
     public interface OnItemClickListener {

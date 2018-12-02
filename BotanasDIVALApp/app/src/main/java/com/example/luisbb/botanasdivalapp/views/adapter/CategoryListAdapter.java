@@ -17,12 +17,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.models.Categories;
-import com.hitesh_sahu.retailapp.models.DataCenter;
-import com.hitesh_sahu.retailapp.utils.ColorGenerator;
-import com.hitesh_sahu.retailapp.views.customview.TextDrawable;
-import com.hitesh_sahu.retailapp.views.customview.TextDrawable.IBuilder;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.models.Categories;
+import com.example.luisbb.botanasdivalapp.models.DataCenter;
+import com.example.luisbb.botanasdivalapp.utils.ColorGenerator;
+import com.example.luisbb.botanasdivalapp.views.customview.TextDrawable;
+import com.example.luisbb.botanasdivalapp.views.customview.TextDrawable.IBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -23,30 +23,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.hitesh_sahu.retailapp.R;
-import com.hitesh_sahu.retailapp.models.DataCenter;
-import com.hitesh_sahu.retailapp.models.Money;
-import com.hitesh_sahu.retailapp.models.Products;
-import com.hitesh_sahu.retailapp.utils.ColorGenerator;
-import com.hitesh_sahu.retailapp.utils.Utils;
-import com.hitesh_sahu.retailapp.views.activities.ECartHomeActivity;
-import com.hitesh_sahu.retailapp.views.customview.ItemTouchHelperViewHolder;
-import com.hitesh_sahu.retailapp.views.customview.OnStartDragListener;
-import com.hitesh_sahu.retailapp.views.customview.TextDrawable;
-import com.hitesh_sahu.retailapp.views.customview.TextDrawable.IBuilder;
-import com.hitesh_sahu.retailapp.views.fragment.MyCartFragment;
+import com.example.luisbb.botanasdivalapp.R;
+import com.example.luisbb.botanasdivalapp.models.DataCenter;
+import com.example.luisbb.botanasdivalapp.models.Money;
+import com.example.luisbb.botanasdivalapp.models.Products;
+import com.example.luisbb.botanasdivalapp.utils.ColorGenerator;
+import com.example.luisbb.botanasdivalapp.utils.Utils;
+import com.example.luisbb.botanasdivalapp.views.activities.ECartHomeActivity;
+import com.example.luisbb.botanasdivalapp.views.customview.ItemTouchHelperViewHolder;
+import com.example.luisbb.botanasdivalapp.views.customview.OnStartDragListener;
+import com.example.luisbb.botanasdivalapp.views.customview.TextDrawable;
+import com.example.luisbb.botanasdivalapp.views.customview.TextDrawable.IBuilder;
+import com.example.luisbb.botanasdivalapp.views.fragment.MyCartFragment;
 
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Simple RecyclerView.Adapter that implements {@link ItemTouchHelperAdapter} to
- * respond to move and dismiss events from a
- * {@link android.support.v7.widget.helper.ItemTouchHelper}.
- *
- * @author Hitesh Sahu (hiteshsahu.com)
- */
 public class ShoppingListAdapter extends
         RecyclerView.Adapter<ShoppingListAdapter.ItemViewHolder> implements
         ItemTouchHelperAdapter {
@@ -85,21 +78,7 @@ public class ShoppingListAdapter extends
 
         String sellCostString = Money.getMoneyInstance(
                 BigDecimal.valueOf(Long.valueOf(productList.get(position)
-                        .getPrice()))).toString()
-                + "  ";
-
-//        String buyMRP = Money.getMoneyInstance(
-//                BigDecimal.valueOf(Long.valueOf(productList.get(position)
-//                        .getMRP()))).toString();
-//
-//        String costString = sellCostString + buyMRP;
-//
-//        holder.itemCost.setText(costString, BufferType.SPANNABLE);
-//
-//        Spannable spannable = (Spannable) holder.itemCost.getText();
-//
-//        spannable.setSpan(new StrikethroughSpan(), sellCostString.length(),
-//                costString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        .getPrice()))).toString();
 
         mDrawableBuilder = TextDrawable.builder().beginConfig().withBorder(4)
                 .endConfig().roundRect(10);
@@ -199,8 +178,8 @@ public class ShoppingListAdapter extends
                     DataCenter.getCenterRepository().getListOfProductsInShoppingList()
                             .remove(position);
 
-                    if (Integer.valueOf(((ECartHomeActivity) context)
-                            .getItemCount()) == 0) {
+                    if (((ECartHomeActivity) context)
+                            .getItemCount() == 0) {
 
                         MyCartFragment.updateMyCartFragment(false);
 
